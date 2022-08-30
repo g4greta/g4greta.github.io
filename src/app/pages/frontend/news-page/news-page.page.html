@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="onScroll($event)">
+  <app-nav></app-nav>
+  <div class="container-fluid h-100 bg" id="intro">
+    <div class="row justify-content-center align-items-center h-100" >
+        <div class="bg-news text-center">
+          <div class="row">
+            <span class="text-black news-date">
+              {{article?.created * 1000 | date:'dd/MM/yyyy'}}
+            </span>
+          </div>
+          <div class="title mb-4">
+            <h1 class="text-black news-title">{{article?.title}}</h1>
+          </div>
+          <div class="row">
+            <span class="text-black">
+              {{article?.subtitle}}
+            </span>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="news-text">
+    <p class="border-left" [innerHTML]="article?.text | sanitize">
+    </p>
+
+  </div>
+
+  <app-footer></app-footer>
+</ion-content>
+

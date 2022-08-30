@@ -1,0 +1,58 @@
+<ion-content>  
+  <div class="wrapper">
+    <app-sidenav></app-sidenav>
+    <div class="main">
+      <app-nav-backoffice></app-nav-backoffice>
+  
+      <main class="content">
+        <div class="container-fluid p-0">
+          <h1 class="h3 mb-3"><strong>Pannello gestione</strong> Articoli</h1>
+          <div class="row">
+            <div class="col-12">
+              <button type="button" class="btn btn-add float-end m-3" [routerLink]="['/add-news/new', {type: this.type}]">Aggiungi</button>
+            </div>  
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+                    <table class="table table-striped mb-0">
+                      <thead style="background-color: #242D3B;">
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Titolo</th>
+                          <th scope="col">Descrizone</th>
+                          <th class="text-center" scope="col">Azioni</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let article of articles | async; let i = index">
+                          <th scope="row" class="align-middle">{{i.toString()}}</th>
+                          <td>{{article.title}}</td>
+                          <td>{{article.subtitle}}</td>
+                          <td class="text-center">
+                            <div class="m-1">
+                              <button class="btn" [routerLink]="['/add-news/'+article.id, {type: this.type}]" ><ion-icon name="create-outline"></ion-icon>Modifica</button>
+                            </div>
+                            <div class="m-1">
+                              <button class="btn" *ngIf="!this.as.checkType(this.type)" (click)="delete(article.id, article)"><ion-icon name="trash-outline"></ion-icon>Elimina</button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+  
+      <app-footer-backoffice></app-footer-backoffice>
+    </div>
+  </div>
+</ion-content>
+
+

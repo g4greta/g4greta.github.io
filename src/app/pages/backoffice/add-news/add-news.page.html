@@ -1,0 +1,65 @@
+<ion-content>  
+  <div class="wrapper">
+    <app-sidenav></app-sidenav>
+    <div class="main">
+      <app-nav-backoffice></app-nav-backoffice>
+
+  
+      <main class="content">
+        <h1 class="h3 mb-3"><strong>Aggiungi</strong> Articolo</h1>
+        <form class="mt-5" [formGroup]="editorFrom" (ngSubmit)="onSubmit()">
+          <div>
+            <h3 class="h3 mb-3 mt-3">Titolo</h3>
+            <input class="form-control" placeholder="Inserisci il titolo dell'articolo ..." formControlName = "title" required>
+            <div class="form-control-feedback text-danger"
+                *ngIf="editorFrom.controls['title'].errors && (editorFrom.controls['title'].dirty || editorFrom.controls['title'].touched)">
+                <p *ngIf="editorFrom.controls['title'].errors.required">Campo richiesto</p>
+                <p *ngIf="editorFrom.controls['title'].errors.pattern">Carratteri speciali non ammessi</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="h3 mb-3 mt-3">Sottotitolo</h3>
+            <input class="form-control" placeholder="Inserisci il link all'immagine di copertina" formControlName = "subtitle" required>
+            <div class="form-control-feedback text-danger"
+                *ngIf="editorFrom.controls['subtitle'].errors && (editorFrom.controls['subtitle'].dirty || editorFrom.controls['subtitle'].touched)">
+                <p *ngIf="editorFrom.controls['subtitle'].errors.required">Campo richiesto</p>
+                <p *ngIf="editorFrom.controls['subtitle'].errors.pattern">Carratteri speciali non ammessi</p>
+            </div>
+          </div>
+          <div class="d-none">
+            <h3 class="h3 mb-3 mt-3">Immagine di copertina</h3>
+            <input class="form-control" placeholder="Inserisci il link all'immagine di copertina" formControlName = "img" required>
+            <div class="form-control-feedback text-danger"
+                *ngIf="editorFrom.controls['img'].errors && (editorFrom.controls['img'].dirty || editorFrom.controls['img'].touched)">
+                <p *ngIf="editorFrom.controls['img'].errors.required">Campo richiesto</p>
+                <p *ngIf="editorFrom.controls['img'].errors.pattern">Carratteri speciali non ammessi</p>
+            </div>
+          </div>
+          <div class="mt-5">
+            <quill-editor [styles]="{height: '350px'}"
+                        [modules]="this.quillConfiguration"
+                        formControlName = "text" 
+            ></quill-editor>
+            <div class="form-control-feedback text-danger"
+                *ngIf="editorFrom.controls['text'].errors && (editorFrom.controls['text'].dirty || editorFrom.controls['text'].touched)">
+                <p *ngIf="editorFrom.controls['text'].errors.required">Campo richiesto</p>
+                <p *ngIf="editorFrom.controls['text'].errors.pattern">Carratteri speciali non ammessi</p>
+            </div>
+          </div>
+          <button class="btn btn-add float-end m-3" >Pubblica</button>
+        </form>
+      </main>
+  
+      <app-footer-backoffice></app-footer-backoffice>
+
+    </div>
+    
+  </div>
+</ion-content>
+
+
+
+
+
+
+

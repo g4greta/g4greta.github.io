@@ -1,0 +1,33 @@
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+thead th {
+  color: #fff;
+}
+
+.card {
+  border-radius: .5rem;
+}
+
+.table-scroll {
+  border-radius: .5rem;
+}
+
+.table-scroll table thead th {
+  font-size: 1rem;
+}
+thead {
+  top: 0;
+  position: sticky;
+}
+
+.btn-add{
+  background-color: #242D3B;
+  color: white;
+  width: 150px;
+  margin-right: 0px !important;
+}

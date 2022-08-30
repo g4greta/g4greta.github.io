@@ -1,0 +1,88 @@
+
+
+<ion-content>
+  <!-- <ion-button routerLink="/materials"> Lista materiali</ion-button><br>
+  <ion-button routerLink="/news"> Lista articoli</ion-button> -->
+
+  
+  <div class="wrapper">
+    <app-sidenav></app-sidenav>
+    <div class="main">
+      <!-- <nav class="navbar navbar-expand navbar-light navbar-bg">
+
+        <a class="sidebar-toggle js-sidebar-toggle" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation" id="iconNavbarSidenav" (click)="toggleMenu()">
+          <i id="hamburger-icon" class="hamburger align-self-center"></i>
+        </a>
+      </nav> -->
+      <app-nav-backoffice></app-nav-backoffice>
+  
+      <main class="content">
+        <div class="container-fluid p-0">
+  
+          <h1 class="h3 mb-3"><strong>G4Greta</strong> Dashboard</h1>
+          
+          
+          <div class="row">
+            <div class="col h-100">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h1 class="h3 mb-3 "><strong>Data di oggi</strong> </h1>
+                  <h1 class="mx-4 h3 mb-3">{{currentDate | date:'dd/MM/yyyy'}}</h1>
+                </div>
+              </div>
+            </div>
+            <div class="col h-100">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h1 class="h3 mb-3 "><strong>Orario</strong> </h1>
+                  <h1 class="mx-4 h3 mb-3">{{currentDate | date:'hh:mm a'}}</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row h-100">
+            <div class="col h-100">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h1 class="h3 mb-3">Aggiungi Nuovo articolo</h1>
+                  <p class="mx-4">Da questa sezione puoi accedere al pannello di gestione delle news/articoli che verranno automaticamente pubblicate sul portale</p>
+                  <div>
+                    <ion-icon  name="newspaper-outline"></ion-icon>
+                  </div>
+                  <div>
+                    <button class="btn btn-add m-3" [routerLink]="['/add-news/new', {type: 'articles'}]">Nuovo articolo</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col h-100">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h1 class="h3 mb-3">Aggiungi Nuovo materiale</h1>
+                  <p class="mx-4">Da questa sezione puoi accedere al pannello di gestione del materiale che verrà pubblicato automaticamente sul portale</p>
+                  <div>
+                    <ion-icon name="pencil-sharp"></ion-icon>
+                  </div>
+                  <div>
+                    <button class="btn btn-add m-3" routerLink="/add-material/new">Nuovo materiale</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </main>
+  
+     <!--footer posizione vecchia-->
+     <app-footer-backoffice></app-footer-backoffice>
+
+    </div>
+  </div>
+ 
+</ion-content>

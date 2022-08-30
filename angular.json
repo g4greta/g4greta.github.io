@@ -30,8 +30,12 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": [],
+            "styles": ["src/theme/variables.scss", "./node_modules/sweetalert2/src/sweetalert2.scss","src/global.scss", {
+              "input": "./node_modules/bootstrap/scss/bootstrap.scss"
+            }
+            ],
+            "scripts": [ "./src/assets/js/jquery/v3.6.0/jquery.min.js", "./node_modules/sweetalert2/dist/sweetalert2.js",
+            "./src/assets/js/main.js", "./src/assets/js/popper.min.js", "node_modules/scrollreveal/dist/scrollreveal.js"],
             "aot": false,
             "vendorChunk": true,
             "extractLicenses": false,
@@ -96,8 +100,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "styles": [],
-            "scripts": [],
+            "styles": ["./node_modules/sweetalert2/src/sweetalert2.scss"],
+            "scripts": [ "./src/assets/js/jquery/v3.6.0/jquery.min.js", "./node_modules/sweetalert2/dist/sweetalert2.js",
+            "./src/assets/js/main.js", "./src/assets/js/popper.min.js", "./node_modules/scrollreveal/dist/scrollreveal.js"],
             "assets": [
               {
                 "glob": "favicon.ico",
@@ -148,7 +153,8 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": false
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

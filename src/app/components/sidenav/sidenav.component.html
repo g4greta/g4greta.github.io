@@ -1,0 +1,56 @@
+<nav id="sidebar" class="sidebar js-sidebar sidebar-backoffice" >
+  <div class="sidebar-content js-simplebar">
+    <a class="sidebar-brand" routerLink="/dashboard">
+      <span class="align-middle">G4Greta Admin Panel</span>
+    </a>
+
+    <ul class="sidebar-nav">
+
+      <li class="sidebar-item" [ngClass]="{'active': this.page == '/dashboard' }">
+        <a class="sidebar-link" routerLink="/dashboard">
+          <ion-icon name="albums-outline" class="align-middle" data-feather="sliders"></ion-icon><span class="align-middle ml-label">Dashboard</span>
+        </a>
+      </li>
+
+      <li class="sidebar-header">
+        Pagine
+      </li>
+
+      <li class="sidebar-item" [ngClass]="{'active': this.type == 'articles' }">
+        <a class="sidebar-link" [routerLink]="['/news', {type: 'articles'}]">
+          <ion-icon name="newspaper-outline" class="align-middle" data-feather="user"></ion-icon><span class="align-middle ml-label">Articoli</span>
+        </a>
+      </li>
+
+      <li class="sidebar-item" [ngClass]="{'active': this.type == 'pages' }">
+        <a class="sidebar-link" [routerLink]="['/news', {type: 'pages'}]">
+          <ion-icon name="document-outline" class="align-middle" data-feather="user"></ion-icon><span class="align-middle ml-label">Pagine</span>
+          <!-- <ion-icon name="newspaper-outline" class="align-middle" data-feather="user"></ion-icon><span class="align-middle ml-label">Pagine</span> -->
+        </a>
+      </li>
+
+      <li class="sidebar-item" [ngClass]="{'active': this.page == '/materials' }">
+        <a class="sidebar-link" routerLink="/materials">
+          <ion-icon name="pencil-outline" class="align-middle" data-feather="log-in"></ion-icon> <span class="align-middle ml-label">Materiale</span>
+        </a>
+      </li>
+
+      <li class="sidebar-header">
+        Impostazioni
+      </li>
+
+      <li class="sidebar-item" >
+        <a class="sidebar-link" (click)="logout()">
+          <ion-icon name="log-out-outline" class="align-middle" data-feather="log-in"></ion-icon> <span class="align-middle ml-label">Logout</span>
+        </a>
+      </li>
+
+      <li class="sidebar-item" [ngClass]="{'active': this.page == '/help' }">
+        <a class="sidebar-link" routerLink="/help">
+          <ion-icon name="help-circle-outline" class="align-middle" data-feather="log-in"></ion-icon><span class="align-middle ml-label">Assistenza</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>

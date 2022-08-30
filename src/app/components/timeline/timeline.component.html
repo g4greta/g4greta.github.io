@@ -1,0 +1,18 @@
+<section class="bg-light">
+  <a class="btn btn-primary rounded-pill download-button p-2 mt-3" [routerLink]="['/news-page/TIaSksTavhuaJwujk863', {type: 'pages'}]" >Programma completo</a>
+
+  <div class="container py-5">
+    <div class="main-timeline" [ngsInterval]="1050" [ngsRevealSet]="{ reset:true}" [ngsSelector]="'.timeline'">
+      <div *ngFor="let timeline of timelines; let odd = odd; let even = even; " class="timeline {{timeline.position}}" >
+      <!-- ngClass="{ 'left': {{even}}, 'right': {{!even}}}"> -->
+        <div class="card custom-card" >
+          <div class="card-body p-4">
+            <img class="timeline-img" src="{{timeline.icon}}">
+            <h3 class="mb-0 text-green">{{timeline.date}}</h3>
+            <h2 class="mb-0"> {{timeline.title}} </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

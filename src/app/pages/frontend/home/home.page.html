@@ -1,0 +1,127 @@
+<ion-header [translucent]="true">
+ 
+</ion-header>
+
+<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="onScroll($event)">
+
+  
+ <app-nav ></app-nav>
+
+
+  <!--Home-->
+  <div class="container-fluid h-100 bg" id="intro">
+    <div class="row align-items-center h-100" >
+      <div class="mx-auto text-center" >
+        <img class="logo" src="../../assets/logo.svg">
+        <div class="title mb-4">
+          <h1 class="text-white">
+            <span class="greta-green">G</span>irls for <span class="greta-green">Gre</span>en
+          </h1>
+          <h1 class="text-white"><span class="greta-green">T</span>echnology <span class="home_text">A</span>pplications</h1>
+        </div>
+        <div class="row">
+          <span class="text-white">
+            <ion-icon name="calendar-outline" class="greta-green"></ion-icon>
+              Nov. 2022 - Gen. 2023
+          </span>
+          <span class="text-white">
+            <ion-icon name="location-outline" class="greta-green"></ion-icon>
+            Università la Sapienza, Roma
+          </span>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <!--Sezione informativa-->
+  <section id="roadmap" name="roadmap">
+    <div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="m-5">
+            <p class="greta-green">INFO</p>
+            <h1>G4Greta</h1>
+            <p>Il progetto G4GRETA (Girls for Green technology Applications) ha come obiettivo di appassionare un
+              maggior numero di ragazze all’uso delle tecnologie dell’ICT (Information and Communication Technology)
+              mostrando come queste tecnologie, insieme ad altre, siano di grande supporto alla sostenibilità
+              ambientale, e - se saremo capaci di sfruttarle - ci aiuteranno a salvare il Pianeta. <br><br>
+              In particolare, nel corso del progetto, le partecipanti impareranno a progettare App per cellulari e
+              potranno, con l’aiuto di tutor e docenti universitari, creare dei loro progetti di <span class="greta-green">App su tematiche green</span></p>
+            <a type="button" class="btn btn-primary rounded-pill float-end more-button p-2 mt-3" [routerLink]="['/news-page/mJSf8L9YgkBj09e9oYFj', {type: 'pages'}]" >Leggi di più</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img src="../../assets/imgs/info.svg" class="info" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!--Sezione programma-->
+  <section id="roadmap" name="roadmap" class="bg-light">
+    <div class="text-center mt-5">
+      <div class="pt-4">
+        <h1 class="text-dark">Programma</h1>
+      </div>
+      <app-timeline></app-timeline>
+    </div>
+  </section>
+
+  <!-- Sezione materiale-->
+  <section id="materials" name="materials">
+    <div class="text-center mt-5 mb-5">
+      <div class="mx-5">
+        <h1 class="text-dark">Materiale Didattico</h1>
+        <app-materials></app-materials>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Sezione carica progetto-->
+  <section id="projects" name="projects">
+    <div class="row align-items-center projects">
+      <div class="mx-auto text-center" >
+        <h1 class="text-white">Carica il tuo progetto</h1>
+        <a type="button" class="btn btn-success upload-btn mt-4"  (click)="this.is.isFormAvaiable()">Upload!</a>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Sezione news-->
+  <section id="news" name="news" class="bg-light py-3">
+    <div class="text-center">
+      <div class="py-3">
+        <h1 class="text-black mb-3">Ultime news</h1>
+      </div>
+      <app-news></app-news>
+    </div>
+  </section>
+
+  <!-- Sezione sponsor-->
+  <div class="text-center mt-5">
+    <h1 class="text-dark pt-3 ">Sponsor</h1>
+    <div class="row align-item-center sponsor mt-0">
+      <div class="mx-auto text-center">
+        <img class="logo-sponsor" src="../../assets/sponsor/sapienza.png" alt="">
+      </div>
+    </div>
+    <h2 class="text-dark pt-3">Partner</h2>
+    <div class="row align-item-center sponsor mt-0">
+      <div class="mx-auto text-center">
+        <img class="partner-sponsor m-4" src="../../assets/sponsor/fmd.png" alt="">
+        <img class="partner-sponsor m-4" src="../../assets/sponsor/ibm.svg" alt="">  
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  <app-footer></app-footer>
+  
+
+</ion-content>

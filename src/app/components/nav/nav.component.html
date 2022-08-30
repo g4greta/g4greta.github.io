@@ -1,0 +1,63 @@
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-scroll" >
+    <div class="container-fluid">
+      <div class="w-100">
+        <div class="row justify-content-between my-2">
+          <div class="col-5">
+            <img class="logo-2" src="../../../assets/logo2.svg" alt="" [routerLink]="[ '/home' ]">
+          </div>
+          <div class="col-7 navbar-toggler ">
+            <div class="row align-items-center justify-content-end">
+              <div class="col-11 text-end">
+                <button class="shadow-none bg-transparent" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation" id="iconNavbarSidenav" (click)="toggleMenu()">
+                  <ion-icon class="text-white h1" id="hamburger-icon" name="menu-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-7">
+            <div class="collapse navbar-collapse justify-content-end align-middle navbar-expand-xl" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto my-auto">
+                <li class="nav-item">
+                  <a class="nav-link active menu" aria-current="page" href="#!">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link menu" href="home#roadmap">Programma</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link menu"  href="home#materials">Materiale  Didattico</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link menu"  (click)="this.is.isFormAvaiable()">Progetti</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link menu" [routerLink]="['/news-page/dEX8WCNd1rUdd88ctoqY', {type: 'pages'}]">Certificazoni</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link menu"  routerLink="/news-blog">News</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link menu"  [routerLink]="['/news-page/kaMY7Hi342XDUjVRCg56', {type: 'pages'}]">Contatti</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link menu"  routerLink="/login">Area riservata</a>
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+     
+      
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+
+
+</header>

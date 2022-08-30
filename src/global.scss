@@ -24,3 +24,140 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600");
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.snow.css';
+@import 'src/theme/backoffice.scss';
+
+
+
+
+.btn-add{
+  background-color: #242D3B !important;
+  color: white !important;
+  width: 150px;
+  margin-right: 0px !important;
+
+}
+
+.download-button{
+  background-color: var(--ion-color-primary-green) !important;
+  border: none !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  margin-top: 0px !important;
+}
+.more-button{
+    background-color:var(--ion-color-primary-green) !important;
+    border: none !important;
+    max-width: 200px !important;
+    margin-bottom: 30px !important;
+    border-color: none !important;
+  }
+
+  .bg{
+    background-image: url("./assets/imgs/bg-home.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.486);
+  }
+  
+  .logo{
+    max-width: 200px;
+  }
+  
+  .logo-2{
+    max-width: 250px;
+  }
+  
+  .greta-green{
+    color: var(--ion-color-primary-green);
+  }
+  
+  .more-button{
+    background-color:var(--ion-color-primary-green) !important;
+    border: none;
+    max-width: 200px !important;
+    margin-bottom: 30px;
+  }
+  
+  .info{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .sponsor {
+    background-color: white;
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+  
+  .logo-sponsor {
+    width: 250px;
+  }
+  .partner-sponsor {
+    width: 100px;
+  }
+  
+  .projects{
+    height: 200px;
+    background-image: url("./assets/imgs/coding.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.486);
+  }
+  
+  .upload-btn {
+    background-color: var(--ion-color-primary-green) !important;
+  }
+  
+  
+  .footer{
+    height: 300px;
+    background-color: black;
+  }
+  
+  .menu-a{
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .menu-a:hover{
+    color: var(--ion-color-primary-green)
+  }
+  
+  
+  .social-icon{
+    color: rgba(255, 255, 255, 0.6);  
+  }
+  .social-icon:hover{
+    color: var(--ion-color-primary-green)
+  }
+  
+  
+  
+  
+  .footer-text{
+    color: rgba(255, 255, 255, 0.6);;
+  }
+  
+  
+  .navbar-inverse{
+    background-color: white;
+    color: black;
+  }
+  
+  .card-news{
+    margin: 25px !important;
+  }
+  
+  .card-news-title{
+    color: var(--ion-color-primary-green);
+  }
+  
+
+

@@ -1,0 +1,16 @@
+<div class="row" class="justify-content-center mb-3">
+  <div class="col-md-8 mx-auto">
+    <div class="card-group">
+      <div class="card border-0 m-5" *ngFor="let article of articles | async | slice:0:3">
+        <img class="card-img-top" src="{{article.img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-start card-news-title">{{article.title}}</h5>
+          <p class="card-text text-start">{{article.subtitle}}</p>
+          <a type="button" class="btn btn-primary rounded-pill float-end more-button p-2 mt-3 border-0" href="#"  [routerLink]="['/news-page/'+article.id, {type: 'articles' }]" >Leggi di più</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

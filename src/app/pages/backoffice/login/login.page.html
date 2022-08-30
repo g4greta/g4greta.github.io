@@ -1,0 +1,52 @@
+<ion-content>
+  <main class="d-flex w-100">
+		<div class="container d-flex flex-column">
+			<div class="row vh-100">
+				<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+					<div class="d-table-cell align-middle">
+
+						<div class="text-center mt-4">
+							<h1 class="h2">Bentornato/a</h1>
+							<p class="lead">
+								Inserisci le credenziali per accedere al pannello
+							</p>
+						</div>
+
+						<div class="card">
+							<div class="card-body">
+								<div class="m-sm-4">
+									<div class="text-center">
+										<img src="../../../../assets/logo.svg" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" />
+									</div>
+									<form [formGroup]="loginForm" (ngSubmit)="onSubmit()"> 
+										<div class="mb-3">
+											<label class="form-label">Email</label>
+											<input class="form-control form-control-lg" type="email" name="email" formControlName ="email" placeholder="Enter your email" >
+											<div class="form-control-feedback text-danger"
+													*ngIf="loginForm.controls['email'].errors && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">
+												<p *ngIf="loginForm.controls['email'].errors.required">Email richiesta</p>
+												<p *ngIf="loginForm.controls['email'].errors.email">Formato email non corretto</p>
+											</div>
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Password</label>
+											<input class="form-control form-control-lg" type="password" name="password" formControlName ="password" placeholder="Enter your password" />
+											<div class="form-control-feedback text-danger"
+													*ngIf="loginForm.controls['password'].errors && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+												<p *ngIf="loginForm.controls['password'].errors.required">Password richiesta</p>											
+											</div>
+										</div>
+										<div class="text-center mt-3">
+											<button class="btn btn-add">Accedi</button>
+										</div>
+									</form>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</ion-content>
