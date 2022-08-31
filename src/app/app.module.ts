@@ -23,6 +23,12 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import it from '@angular/common/locales/it';
 import { registerLocaleData } from '@angular/common';
 import { FileSizePipe } from './pipes/file-size.pipe';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
 registerLocaleData(it);
 @NgModule({
@@ -36,9 +42,17 @@ registerLocaleData(it);
             AngularFireAuthModule,
             AngularFirestoreModule,
             AngularFireStorageModule,
-            AngularFireDatabaseModule,],
+            AngularFireDatabaseModule,
+            FontAwesomeModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, { provide: LOCALE_ID, useValue: "it-IT" }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule {
+  
+  constructor(library: FaIconLibrary) { 
+    const icons=[faFacebookF];
+		library.addIconPacks(fas, fab, far);
+	}
+
+}

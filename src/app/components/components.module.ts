@@ -16,8 +16,10 @@ import { FooterComponent } from "./footer/footer.component";
 import { SidenavComponent } from "./sidenav/sidenav.component";
 import { NavBackofficeComponent } from "./nav-backoffice/nav-backoffice.component";
 import { FooterBackofficeComponent } from "./footer-backoffice/footer-backoffice.component";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+
 @NgModule({
-    imports: [CommonModule,FormsModule, ReactiveFormsModule, NgsRevealModule, RouterModule,IonicModule
+    imports: [CommonModule,FormsModule, ReactiveFormsModule, NgsRevealModule, RouterModule,IonicModule,FontAwesomeModule
         // Keyboard
         ],
     declarations:[TimelineComponent, MaterialsComponent,NavComponent, NewsComponent, FooterComponent, SidenavComponent, NavBackofficeComponent,FooterBackofficeComponent],

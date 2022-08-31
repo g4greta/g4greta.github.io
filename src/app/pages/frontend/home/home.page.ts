@@ -24,6 +24,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
   }
 
+
   onScroll(event) {
     if(event.detail.currentY > 0)
       $(".navbar").addClass('navbar-inverse');

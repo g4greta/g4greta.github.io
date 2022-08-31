@@ -4,6 +4,12 @@
 
 <ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="onScroll($event)">
 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="contacts"  [routerLink]="['/news-page/kaMY7Hi342XDUjVRCg56', {type: 'pages'}]">
+      <ion-icon name="help-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
   
  <app-nav ></app-nav>
 
@@ -95,7 +101,7 @@
   <section id="news" name="news" class="bg-light py-3">
     <div class="text-center">
       <div class="py-3">
-        <h1 class="text-black mb-3">Ultime news</h1>
+        <h1 class="text-black mb-3">Blog</h1>
       </div>
       <app-news></app-news>
     </div>
