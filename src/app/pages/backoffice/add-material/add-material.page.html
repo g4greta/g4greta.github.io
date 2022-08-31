@@ -50,16 +50,27 @@
             </div>
             <div>
               <div>
-                <h3 class="h3 mb-3 mt-3">Link <button>Upload</button></h3>
+                <h3 class="h3 mb-3 mt-3">Link</h3>
+                <div>
+                  <label class="fw-bold mx-3">Upload file da:  </label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="computer" (change)="onItemChange($event)" checked>
+                    <label class="form-check-label" for="inlineRadio1">Computer</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="web" (change)="onItemChange($event)">
+                    <label class="form-check-label" for="inlineRadio2">Link esterno</label>
+                  </div>
+                </div>
               </div>
 
-              <div>
+              <div *ngIf="!web">
                 <ion-card *ngIf="!this.ms.isImgUploading && !this.ms.isImgUploaded">
                   <ion-card-header>
                     <ion-card-title>Seleziona File</ion-card-title>
                   </ion-card-header>
 
-                  <ion-button color="danger">
+                  <ion-button color="light">
                     <input type="file" class="upload" (change)="this.fileUpload($event)" />
                   </ion-button>
                 </ion-card>
@@ -94,7 +105,6 @@
 
                   <ion-card-content>
                     <div *ngIf="this.ms.fileUploadedPath | async as fileUrl">
-                      <!-- <img [src]="fileUrl" /> -->
                       <a [href]="fileUrl" rel="nofollow" target="_blank">Scarica</a>
                     </div>
                     Dimensione file: {{ this.ms.FileSize }}
@@ -102,11 +112,14 @@
                 </ion-card>
               </div>
               
-              <input class="form-control" placeholder="Link al materiale" formControlName = "link" required>
-              <div class="form-control-feedback text-danger"
-                  *ngIf="form.controls['link'].errors && (form.controls['link'].dirty || form.controls['link'].touched)">
-                <p *ngIf="form.controls['link'].errors.pattern">Formato link non corretto</p>
+              <div *ngIf="web">
+                <input class="form-control" placeholder="Link al materiale" formControlName = "link" required>
+                <div class="form-control-feedback text-danger"
+                    *ngIf="form.controls['link'].errors && (form.controls['link'].dirty || form.controls['link'].touched)">
+                  <p *ngIf="form.controls['link'].errors.pattern">Formato link non corretto</p>
+                </div>
               </div>
+             
             </div>
             <button class="btn btn-add float-end m-3" >Pubblica</button>
           </form>

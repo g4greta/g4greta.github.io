@@ -48,6 +48,10 @@ const routes: Routes = [
     path: 'news-blog',
     loadChildren: () => import('./pages/frontend/news/news.module').then( m => m.NewsPageModule)
   },
+  {
+    path: 'help',
+    loadChildren: () => import('./pages/backoffice/help/help.module').then( m => m.HelpPageModule)
+  },
 ];
 
 @NgModule({

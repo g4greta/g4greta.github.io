@@ -33,8 +33,8 @@
                         <tr *ngFor="let material of materials | async; let i = index">
                           <th scope="row" class="align-middle">{{i.toString()}}</th>
                           <td>{{material.title}}</td>
-                          <td>{{material.description}}</td>
-                          <td>{{material.link}}</td>
+                          <td>{{(material.description.length>6)? (material.description  | slice:0:20)+'..':(material.description )}}</td> 
+                          <td><a href="{{material.link}}" rel="nofollow" target="_blank">{{(material.link.length>6)? (material.link  | slice:0:20)+'..':(material.link )}}</a></td>
                           <td class="text-center">
                             <div class="m-1">
                               <button class="btn" routerLink="/add-material/{{material.id}}"><ion-icon name="create-outline"></ion-icon>Modifica</button>

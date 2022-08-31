@@ -16,6 +16,8 @@ export class AddMaterialPage implements OnInit {
   form: FormGroup;
   private id: string;
   private isNew: boolean = false;
+  computer = false;
+  web = false;
 
   constructor(public ms: MaterialService, 
     private activatedRoute: ActivatedRoute,
@@ -38,6 +40,13 @@ export class AddMaterialPage implements OnInit {
       }
   }
 
+  onItemChange(event){
+    if(event.target.value === "web")
+      this.web = true;
+    else
+      this.web = false;
+  }
+
   ngOnInit() {
   }
 
@@ -55,6 +64,8 @@ export class AddMaterialPage implements OnInit {
       } else {
         this.ms.updateMaterial(this.id, this.form.value).
           then(() => { 
+            this.ms.isImgUploading = false;
+            this.ms.isImgUploaded = false;
             this.router.navigate(['/materials'])
           })
           .catch(() =>{
