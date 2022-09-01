@@ -46,7 +46,7 @@ export class InfoService {
           window.open(link.value, "_blank");
         });
       } else {
-        this.al.infoAlert('Il form sarà disponibile nelle prossime settimane');
+        this.al.infoAlert('Le indicazioni sulle modalità di sottomissione dei progetti delle partecipanti saranno pubblicate le prime settimane del 2023');
       }
     })
   }
