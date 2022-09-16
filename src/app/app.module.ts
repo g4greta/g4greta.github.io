@@ -30,6 +30,8 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
+
+
 registerLocaleData(it);
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +41,7 @@ registerLocaleData(it);
             IonicStorageModule.forRoot(),
             QuillModule.forRoot(),
             AngularFireModule.initializeApp(firebaseConfig),
+            AngularFirestoreModule.enablePersistence(),
             AngularFireAuthModule,
             AngularFirestoreModule,
             AngularFireStorageModule,
@@ -50,7 +53,10 @@ registerLocaleData(it);
 })
 export class AppModule {
   
+  
   constructor(library: FaIconLibrary) { 
+
+    
     const icons=[faFacebookF];
 		library.addIconPacks(fas, fab, far);
 	}

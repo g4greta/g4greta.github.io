@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Article } from 'src/app/models/article.model';
 import { ArticleService } from 'src/app/services/article.service';
+import { MetatagsService } from 'src/app/services/metatags.service';
 
 declare var $: any;
 @Component({
@@ -17,9 +17,11 @@ export class NewsPagePage implements OnInit {
   type:string;
 
 
-  constructor(private route: ActivatedRoute,
-    private router: Router,
-    private as: ArticleService) { 
+  constructor(
+    private route: ActivatedRoute,
+    private as: ArticleService,
+    private meta: MetatagsService,
+    ) { 
 
     this.id = this.route.snapshot.paramMap.get('id');
     this.type = this.route.snapshot.paramMap.get('type');
@@ -27,7 +29,15 @@ export class NewsPagePage implements OnInit {
     this.as.getArticle(this.id, this.as.checkType(this.type)).subscribe(res =>{
       console.log(res)
       this.article = res;
+      this.meta.setTitle('G4Greta | ' + this.article.title);
+      this.meta.setSocialTag(
+        this.article.title,
+        this.article.subtitle,
+        this.article.img,
+        this.article.id
+      )
     });
+
   }
  
   ngOnInit() {

@@ -52,6 +52,10 @@ const routes: Routes = [
     path: 'help',
     loadChildren: () => import('./pages/backoffice/help/help.module').then( m => m.HelpPageModule)
   },
+  {
+    path: '**',  
+    redirectTo: 'home',
+  },
 ];
 
 @NgModule({
