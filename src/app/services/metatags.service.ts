@@ -22,8 +22,8 @@ export class MetatagsService {
 
   updateMeta(name:string, content:string):void{
     this.meta.updateTag({
-      name: name,
-      content:content
+      name: name, 
+      content: content
     });
   }
 

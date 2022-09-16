@@ -25,9 +25,8 @@ export class NewsPagePage implements OnInit {
 
     this.id = this.route.snapshot.paramMap.get('id');
     this.type = this.route.snapshot.paramMap.get('type');
-    console.log(this.as.checkType(this.type))
+    
     this.as.getArticle(this.id, this.as.checkType(this.type)).subscribe(res =>{
-      console.log(res)
       this.article = res;
       this.meta.setTitle('G4Greta | ' + this.article.title);
       this.meta.setSocialTag(
@@ -35,7 +34,7 @@ export class NewsPagePage implements OnInit {
         this.article.subtitle,
         this.article.img,
         this.article.id
-      )
+      );
     });
 
   }
