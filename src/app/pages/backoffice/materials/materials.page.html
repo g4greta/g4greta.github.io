@@ -24,16 +24,17 @@
                         <tr>
                           <th scope="col">#</th>
                           <th scope="col">Titolo</th>
-                          <th scope="col">Descrizone</th>
+                          <th scope="col">Tipo</th>
                           <th scope="col">Link</th>
                           <th class="text-center" scope="col">Azioni</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let material of materials | async; let i = index">
+                        <tr *ngFor="let material of materials | async | orderby: 'type': 'asc'; let i = index">
                           <th scope="row" class="align-middle">{{i.toString()}}</th>
                           <td>{{material.title}}</td>
-                          <td>{{(material.description.length>6)? (material.description  | slice:0:20)+'..':(material.description )}}</td> 
+                          <td>{{material.type}}</td>
+                          <!-- <td>{{(material.description.length>6)? (material.description  | slice:0:20)+'..':(material.description )}}</td>  -->
                           <td><a href="{{material.link}}" rel="nofollow" target="_blank">{{(material.link.length>6)? (material.link  | slice:0:20)+'..':(material.link )}}</a></td>
                           <td class="text-center">
                             <div class="m-1">

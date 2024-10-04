@@ -21,7 +21,6 @@ export class NavComponent  implements OnInit{
   }
 
   toggleMenu() {
-    console.log('ciao')
     $("#navbarSupportedContent").toggleClass('collapse');
     if($("#navbarSupportedContent").hasClass('collapse'))
       $("#hamburger-icon").attr('name', 'menu-outline');

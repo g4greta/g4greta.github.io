@@ -26,9 +26,13 @@ export class AddMaterialPage implements OnInit {
 
       this.id = this.activatedRoute.snapshot.paramMap.get('id');
       this.form = new FormGroup({
-        'title': new FormControl('', [Validators.pattern('^[A-Za-z0-9èé,\. ]+$'), Validators.required]),
-        'description': new FormControl('', [Validators.pattern('^[A-Za-z0-9èé,\. ]+$'), Validators.required]),
-        'link': new FormControl('', [ Validators.required])//Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')
+        'title': new FormControl('', [Validators.pattern('^[A-Za-z0-9èéà,()\'\. ]+$'), Validators.required]),
+        'description': new FormControl('', [Validators.pattern('^[A-Za-z0-9èéà,()\'\. ]+$'), Validators.required]),
+        'link': new FormControl('', [ Validators.required]),//Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'),
+        'authors': new FormControl('', [ Validators.required]),//Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')
+        'date': new FormControl('', [ Validators.required]),//Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')
+        'type': new FormControl('', [ Validators.required]),//Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')
+        'link_en': new FormControl('', [])//Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')
       })
     
       if(!(_.isEmpty(this.id) || _.isNull(this.id) || _.isEqual('new', this.id))){
@@ -58,22 +62,26 @@ export class AddMaterialPage implements OnInit {
             this.al.successAlert();
             this.form.reset();
           })
-          .catch(() =>{
+          .catch((e) =>{
+            console.log(e);
             this.al.errorAlert();
           });
       } else {
+        console.log(this.form.value)
         this.ms.updateMaterial(this.id, this.form.value).
           then(() => { 
             this.ms.isImgUploading = false;
             this.ms.isImgUploaded = false;
             this.router.navigate(['/materials'])
           })
-          .catch(() =>{
+          .catch((e) =>{
+            console.log(e);
             this.al.errorAlert();
           });
       }
       this.al.closeAlert();
     } else {
+      console.log('qua')
       this.al.errorAlert('I campi inseriti non rispettano le regole')
     }
   }
@@ -87,7 +95,6 @@ export class AddMaterialPage implements OnInit {
 
   fileUpload(event){
     this.ms.fileUpload(event).subscribe(res =>{
-      console.log(res)
       this.form.controls['link'].setValue(res);
     })
   }

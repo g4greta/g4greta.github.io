@@ -16,7 +16,7 @@ export class MetatagsService {
       { name: 'keywords', content: 'App, Girl, Ragazze, AppInventor, Pitch, Scuola superiore, Coding, IOS, Android, Roma, Lazio' },
       { name: 'robots', content: 'index, follow' },
       { name: 'viewport', content:'viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' },
-      { name: 'description', content: 'Il progetto G4GRETA (Girls for Green technology Applications) ha come obiettivo di appassionare un maggior numero di ragazze all’uso delle tecnologie dell’ICT (Information and Communication Technology) mostrando come queste tecnologie, insieme ad altre, siano di grande supporto alla sostenibilità ambientale, e - se saremo capaci di sfruttarle - ci aiuteranno a salvare il Pianeta.'},
+      { name: 'description', content: 'Il progetto G4GRETA ha come obiettivo di appassionare un maggior numero di ragazze all’uso delle tecnologie dell’ICT mostrando come queste tecnologie siano di grande supporto alla sostenibilità ambientale.'},
     ])
   }
 

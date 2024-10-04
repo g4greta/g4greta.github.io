@@ -30,3 +30,16 @@
 p::first-letter {
     font-size: 200%;
 }
+
+/* Custom CSS to control font size */
+@media (max-width: 500.98px) {
+    .news-title {
+      font-size: 32px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .news-title {
+      font-size: 36px;
+    }
+  }

@@ -37,11 +37,11 @@ export class ArticleService {
 
     this.firestore.collection(`${(!pages) ? this.articlesCollection: this.pagesCollection }`).add(article)
       .then(ref => {
-        console.log(`${(!pages) ? this.articlesCollection: this.pagesCollection }`)
-        console.log(article)
+        // console.log(`${(!pages) ? this.articlesCollection: this.pagesCollection }`)
+        // console.log(article)
         ref.set({ id: ref.id }, { merge: true }).then(() => {
-          console.log("Your extra id field has been created");
-          console.log(ref.id)
+          // console.log("Your extra id field has been created");
+          // console.log(ref.id)
         });
         this.al.successAlert();
       }).catch(() =>{

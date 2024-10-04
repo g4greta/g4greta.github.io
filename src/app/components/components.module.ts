@@ -17,13 +17,14 @@ import { SidenavComponent } from "./sidenav/sidenav.component";
 import { NavBackofficeComponent } from "./nav-backoffice/nav-backoffice.component";
 import { FooterBackofficeComponent } from "./footer-backoffice/footer-backoffice.component";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-
+import { RatingComponent } from "./rating/rating.component";
+import { OrderbyPipe } from "../pipes/orderby.pipe";
 @NgModule({
     imports: [CommonModule,FormsModule, ReactiveFormsModule, NgsRevealModule, RouterModule,IonicModule,FontAwesomeModule
         // Keyboard
         ],
-    declarations:[TimelineComponent, MaterialsComponent,NavComponent, NewsComponent, FooterComponent, SidenavComponent, NavBackofficeComponent,FooterBackofficeComponent],
-    exports: [TimelineComponent, MaterialsComponent, NavComponent, NewsComponent, FooterComponent, SidenavComponent, NavBackofficeComponent,FooterBackofficeComponent],
+    declarations:[TimelineComponent, MaterialsComponent,NavComponent, NewsComponent, FooterComponent, RatingComponent, SidenavComponent, NavBackofficeComponent,FooterBackofficeComponent, OrderbyPipe],
+    exports: [TimelineComponent, MaterialsComponent, NavComponent, NewsComponent, FooterComponent, RatingComponent, SidenavComponent, NavBackofficeComponent,FooterBackofficeComponent, OrderbyPipe],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers: [{
       provide: LOCALE_ID,

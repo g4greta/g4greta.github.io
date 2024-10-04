@@ -1,27 +1,32 @@
+<h1 class="text-dark">Materiale Didattico</h1>
 <div class="row">
   <div class="col-12">
       <div class="card">
           <div class="card-body text-center">
-              <h5 class="card-title m-b-0">Il materiale delle lezioni che saranno svolte durante il progetto G4GRETA saranno resi disponibili su questa sezione</h5>
+              <h5 class="card-title m-b-0">Il materiale didattico delle lezioni e dei laboratori sono disponibili in questa sezione,
+                e potranno essere aggiornati e arricchiti nel corso dell’edizione 23-24</h5>
           </div>
               <div class="table-responsive b-1">
                   <table class="table">
                       <thead class="thead-light header-table">
                           <tr>
-                              <th scope="col">Titolo</th>
-                              <th scope="col">Descrizione</th>
-                              <th scope="col">Link</th>
+                              <th scope="col">Titolo dell'incontro</th>
+                              <th scope="col">Data</th>
+                              <th scope="col">Docenti</th>
+                              <!-- <th scope="col">Descrizione</th> -->
+                              <th scope="col">Link ai materiali didattici</th>
                               
                           </tr>
                       </thead>
                       <tbody class="customtable">
-                          <tr  class="my-5" *ngFor="let material of materials | async">
+                          <tr  class="my-5" *ngFor="let material of materials | async | orderby: 'created': 'asc'" [ngClass]="" [ngStyle]="{'display': material.type == 'Lezione' ? 'content' : 'none'}">
                                 <td class="align-middle">
                                     {{material.title}}
                                 </td>
-                                <td class="align-middle">{{material.description}}</td>
+                                <td class="align-middle">{{material.date}}</td>
+                                <td class="align-middle">{{material.authors}}</td>
                                 <td class="align-middle justify-content-center text-center">
-                                    <a type="button" class="btn btn-primary rounded-pill download-button p-2 mt-3" href="{{material.link}}">Scarica</a>
+                                    <a type="button" class="btn btn-primary rounded-pill download-button p-2 mt-3" href="{{material.link}}">Link</a>
                                 </td>
                           </tr>
                       </tbody>
@@ -30,3 +35,86 @@
       </div>
   </div>
 </div>
+
+
+
+<h1 class="text-dark mt-2 mb-1">Materiale Didattico Aggiuntivo</h1>
+<div class="row">
+  <div class="col-12">
+      <div class="card">
+          <!-- <div class="card-body text-center">
+              <h5 class="card-title m-b-0">Il materiale didattico delle lezioni e dei laboratori sono disponibili in questa sezione,
+                e potranno essere aggiornati e arricchiti nel corso dell’edizione 23-24</h5>
+          </div> -->
+              <div class="table-responsive b-1">
+                  <table class="table">
+                      <thead class="thead-light header-table">
+                          <tr>
+                              <th scope="col">Titolo</th>
+                              <!-- <th scope="col">Data</th> -->
+                              <!-- <th scope="col">Docenti</th> -->
+                              <!-- <th scope="col">Descrizione</th> -->
+                              <th scope="col">Link al materiale</th>   
+                          </tr>
+                      </thead>
+                      <tbody class="customtable">
+                          <tr  class="my-5" *ngFor="let material of materials | async | orderby: 'created'" [ngClass]="" [ngStyle]="{'display': material.type == 'Extra' ? 'content' : 'none'}">
+                                <td class="align-middle">
+                                    {{material.title}}
+                                </td>
+                                <!-- <td class="align-middle">{{material.date}}</td> -->
+                                <!-- <td class="align-middle">{{material.authors}}</td> -->
+                                <td class="align-middle justify-content-center text-center">
+                                    <a type="button" class="btn btn-primary rounded-pill download-button p-2 mt-3" href="{{material.link}}">Link</a>
+                                </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+      </div>
+  </div>
+</div>
+
+<h1 class="text-dark mt-2 mb-1">Come fare a ...?</h1>
+<div class="row">
+  <div class="col-12">
+      <div class="card">
+          <!-- <div class="card-body text-center">
+              <h5 class="card-title m-b-0">Il materiale didattico delle lezioni e dei laboratori sono disponibili in questa sezione,
+                e potranno essere aggiornati e arricchiti nel corso dell’edizione 23-24</h5>
+          </div> -->
+              <div class="table-responsive b-1">
+                  <table class="table">
+                      <thead class="thead-light header-table">
+                          <tr>
+                              <th scope="col">Titolo</th>
+                              <!-- <th scope="col">Data</th> -->
+                              <!-- <th scope="col">Docenti</th> -->
+                              <!-- <th scope="col">Descrizione</th> -->
+                              <th scope="col">Materiale in italiano</th>
+                              <th scope="col">Materiale in inglese</th>
+                              
+                          </tr>
+                      </thead>
+                      <tbody class="customtable">
+                          <tr  class="my-5" *ngFor="let material of materials | async | orderby: 'created'" [ngClass]="" [ngStyle]="{'display': material.type == 'Tutorial' ? 'content' : 'none'}">
+                                <td class="align-middle">
+                                    {{material.title}}
+                                </td>
+                                <!-- <td class="align-middle">{{material.date}}</td>
+                                <td class="align-middle">{{material.authors}}</td> -->
+                                <td class="align-middle justify-content-center text-center">
+                                    <a type="button" class="btn btn-primary rounded-pill download-button p-2 mt-3" href="{{material.link}}"
+                                    [ngStyle]="{'display': !material.link.includes('#') ? 'content' : 'none'}">Link</a>
+                                </td>
+                                <td class="align-middle justify-content-center text-center">
+                                    <a type="button" class="btn btn-primary rounded-pill download-button p-2 mt-3" href="{{material.link_en}}">Link (en)</a>
+                                </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+      </div>
+  </div>
+</div>
+

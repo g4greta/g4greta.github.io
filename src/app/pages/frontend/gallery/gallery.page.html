@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+ 
+</ion-header>
+
+<ion-content [fullscreen]="true" [scrollEvents]="true">
+
+    <app-nav></app-nav>
+
+    <ion-slides pager="true" [options]="slideOpts" style="margin-top: 71px; ">
+        <ion-slide *ngFor="let img of imgs">
+            <img src="{{img}}" class="d-block w-100" 
+            alt="Wild Landscape" />
+        </ion-slide>
+    </ion-slides>
+
+    <div class="container custom-container">
+      <h4 class="my-4">Cartelle ai contenuti</h4>
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-body p-2">
+              <div class="row">
+                <div class="col-3 mx-1">
+                  <img src="https://cdn.iconscout.com/icon/free/png-256/free-tiktok-3185105-2661847.png" style="max-height: 50px; max-width: 50px;" alt="">
+                </div>
+                <div class="col-8 my-auto">
+                  <h5 class="m-0 align-middle">   
+                    <a href="https://drive.google.com/drive/folders/1tqV5sZpigtQmWwEra4H5_xrtJDEOS09-?usp=share_link" >TikTok</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-body p-2">
+              <div class="row">
+                <div class="col-3 mx-1">
+                  <img src="https://www.iconpacks.net/icons/1/free-video-icon-818-thumb.png" style="max-height: 50px; max-width: 50px;" alt="">
+                </div>
+                <div class="col-8 p-0 my-auto">
+                  <h5 class="m-0 align-middle">   
+                    <a href="https://drive.google.com/drive/folders/1eWu3X4gPoDTpT1LMlg4MFHGs_RWxUL0a?usp=share_link" class="stretched-link">Video</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-body p-2">
+              <div class="row">
+                <div class="col-3 mx-1">
+                  <img src="https://static.vecteezy.com/system/resources/previews/018/931/626/original/black-megaphone-icon-png.png" style="max-height: 50px; max-width: 50px;" alt="">
+                </div>
+                <div class="col-8 p-0 my-auto">
+                  <h5 class="m-0 align-middle">   
+                    <a href="https://drive.google.com/drive/folders/1MKSng46n9TmUCMpzoeFM04nMLASS8k5E?usp=share_link" class="stretched-link">Interviste</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-body p-2">
+              <div class="row">
+                <div class="col-3 mx-1">
+                  <img src="https://cdn.icon-icons.com/icons2/2440/PNG/512/gallery_icon_148533.png" style="max-height: 50px; max-width: 50px;" alt="">
+                </div>
+                <div class="col-8 p-0 my-auto">
+                  <h5 class="m-0 align-middle">   
+                    <a href="https://drive.google.com/drive/folders/1Zd9DAliY7BQQdDJ4Y5TdLyZTjEj4FHcw?usp=share_link" class="stretched-link">Foto</a>
+                  </h5>                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+ 
+ </ion-content>

@@ -30,12 +30,15 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
+import { HttpClientModule } from '@angular/common/http';
+// import { OrderByPipe } from './pipes/order-by.pipe';
 
 
 registerLocaleData(it);
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, 
+            HttpClientModule,
             IonicModule.forRoot(), 
             AppRoutingModule, 
             IonicStorageModule.forRoot(),

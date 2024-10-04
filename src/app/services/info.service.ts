@@ -46,7 +46,9 @@ export class InfoService {
           window.open(link.value, "_blank");
         });
       } else {
-        this.al.infoAlert('Le indicazioni sulle modalità di sottomissione dei progetti delle partecipanti saranno pubblicate le prime settimane del 2023');
+        // this.al.infoAlert('Le indicazioni sulle modalità di sottomissione sono accessibili al seguente ' + 
+        // "<a href='' target='_blank' >Link</a>");
+        this.al.infoAlert('Le istruzioni di sottomissione dei progetti di App Green verranno pubblicate a Febbraio 2024');
       }
     })
   }

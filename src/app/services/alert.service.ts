@@ -30,10 +30,18 @@ export class AlertService {
   infoAlert(text?:string){
     Swal.fire({
       title: 'Info',
-      text:   (_.isEmpty(text)) ? "Per qualsaisi altra informazione contatta l'assistenza" : text,
+      // text:   (_.isEmpty(text)) ? "Per qualsaisi altra informazione contatta l'assistenza" : text,
+      html: (_.isEmpty(text)) ? "Per qualsaisi altra informazione contatta l'assistenza" : text,  
+      confirmButtonText: 'Ok',
+      confirmButtonColor: '#198754',
       icon: 'info',
       heightAuto: false
     });
+    // }).then(function(isConfirm) {
+    //   if (isConfirm) {
+    //     window.open("https://docs.google.com/forms/d/e/1FAIpQLScWZjetkZ11x1H9bz7o-L0eJFahsug1MEn89nAhYN4F6GbAfA/viewform", "_blank");
+    //   }
+    // });
   }
 
   confirmAlert(title:string, text?:string){

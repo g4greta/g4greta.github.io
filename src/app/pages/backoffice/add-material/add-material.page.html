@@ -49,6 +49,42 @@
 							</div>
             </div>
             <div>
+              <h3 class="h3 mb-3 mt-3">Autori</h3>
+              <input class="form-control" placeholder="Autori" formControlName = "authors" required>
+              <div class="form-control-feedback text-danger"
+													*ngIf="form.controls['authors'].errors && (form.controls['authors'].dirty || form.controls['authors'].touched)">
+												<p *ngIf="form.controls['authors'].errors.required">Campo richiesto</p>
+												<p *ngIf="form.controls['authors'].errors.pattern">Carratteri speciali non ammessi</p>
+							</div>
+            </div>
+            <div>
+              <h3 class="h3 mb-3 mt-3">Tipo</h3>
+              <input class="form-control" placeholder="Lezione, Tutorial, Extra" formControlName = "type" required>
+              <div class="form-control-feedback text-danger"
+													*ngIf="form.controls['type'].errors && (form.controls['type'].dirty || form.controls['type'].touched)">
+												<p *ngIf="form.controls['type'].errors.required">Campo richiesto</p>
+												<p *ngIf="form.controls['type'].errors.pattern">Carratteri speciali non ammessi</p>
+							</div>
+            </div>
+            <div>
+              <h3 class="h3 mb-3 mt-3">Data</h3>
+              <input class="form-control" placeholder="Data" formControlName = "date" required>
+              <div class="form-control-feedback text-danger"
+													*ngIf="form.controls['date'].errors && (form.controls['date'].dirty || form.controls['date'].touched)">
+												<p *ngIf="form.controls['date'].errors.required">Campo richiesto</p>
+												<p *ngIf="form.controls['date'].errors.pattern">Carratteri speciali non ammessi</p>
+							</div>
+            </div>
+            <div>
+              <h3 class="h3 mb-3 mt-3">Link inglese</h3>
+              <input class="form-control" placeholder="link_en" formControlName = "link_en">
+              <div class="form-control-feedback text-danger"
+													*ngIf="form.controls['link_en'].errors && (form.controls['link_en'].dirty || form.controls['link_en'].touched)">
+												<!-- <p *ngIf="form.controls['link_en'].errors.required">Campo richiesto</p> -->
+												<p *ngIf="form.controls['link_en'].errors.pattern">Carratteri speciali non ammessi</p>
+							</div>
+            </div>
+            <div>
               <div>
                 <h3 class="h3 mb-3 mt-3">Link</h3>
                 <div>

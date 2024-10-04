@@ -32,7 +32,6 @@ export class AuthenticationService {
   
   private ifLoggedIn(): void {
     this.getAuthToken().then((result)=>{
-      console.log('qua' + result)
       if(!result){
         this.authState.next(false)
         this.logout();
@@ -59,12 +58,11 @@ export class AuthenticationService {
           return false;
         }
       }).catch(()=>{
-        console.log('errore')
+
         this.router.navigate(['/login']);
         return false
       })
     }).catch(()=>{
-      console.log('errore')
       this.router.navigate(['/login'])
       return false
     });

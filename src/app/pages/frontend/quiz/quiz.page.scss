@@ -1,0 +1,278 @@
+$color1: #FFB7A6;
+
+img {
+    width: 100%;
+    max-height: 700px;
+    object-fit: contain;
+}
+
+ion-content{
+    --ion-background-color:#FFB7A6;
+}
+
+.rate {
+	float: left;
+	height: 46px;
+	padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#383838;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+// .rate > input:checked ~ label {
+//   color: #fffb00;
+// }
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #fffb00;
+}
+// .rate > input:checked + label:hover,
+// .rate > input:checked + label:hover ~ label,
+// .rate > input:checked ~ label:hover,
+// .rate > input:checked ~ label:hover ~ label,
+// .rate > label:hover ~ input:checked ~ label {
+//   color: #fffb00;
+// }
+
+input{
+  background-color: $color1 !important;
+  border: 1px solid rgb(52, 52, 52);
+  border-radius: 30px;
+  height: 40px;
+  max-width: 600px;
+}
+
+.avanti{
+   max-width: 100px; 
+   height: 40px; 
+   border-radius: 0 30px 30px 0;
+}
+
+
+.title h1 {
+    margin: 4px;
+    font-family: var(--font);
+    font-size: var(--title-size);
+    color: #333;
+}
+
+.title p {
+    margin: 4px;
+    padding-bottom: 25px;
+    font-family: var(--font);
+    font-size: var(--sub-size);
+    color: #888;
+}
+
+.container {
+    text-align: center;
+}
+
+.github {
+    margin: 40px;
+}
+
+.progress {
+    // border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 25px;
+    // margin: 35px;
+    margin-left: 15px;
+    border-radius: 20px;
+    background: #FFB7A6;
+}
+
+.bar {
+    border-radius: 20px;
+    width: 0%;
+    height: 100%;
+    transition: width;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(.36,.55,.63,.48);
+}
+
+.mobile {
+    display: none;
+}
+
+.shadow {
+    /* 25 50 */
+    box-shadow: 0px 45px 50px rgba(0, 0, 0, 0.25); 
+}
+
+.leaf {
+    background-color: #b5ccbf;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='60' height='30'%3E%3Cpath fill='%2340584a' fill-opacity='0.47' d='M0 40a19.96 19.96 0 0 1 5.9-14.11 20.17 20.17 0 0 1 19.44-5.2A20 20 0 0 1 20.2 40H0zM65.32.75A20.02 20.02 0 0 1 40.8 25.26 20.02 20.02 0 0 1 65.32.76zM.07 0h20.1l-.08.07A20.02 20.02 0 0 1 .75 5.25 20.08 20.08 0 0 1 .07 0zm1.94 40h2.53l4.26-4.24v-9.78A17.96 17.96 0 0 0 2 40zm5.38 0h9.8a17.98 17.98 0 0 0 6.67-16.42L7.4 40zm3.43-15.42v9.17l11.62-11.59c-3.97-.5-8.08.3-11.62 2.42zm32.86-.78A18 18 0 0 0 63.85 3.63L43.68 23.8zm7.2-19.17v9.15L62.43 2.22c-3.96-.5-8.05.3-11.57 2.4zm-3.49 2.72c-4.1 4.1-5.81 9.69-5.13 15.03l6.61-6.6V6.02c-.51.41-1 .85-1.48 1.33zM17.18 0H7.42L3.64 3.78A18 18 0 0 0 17.18 0zM2.08 0c-.01.8.04 1.58.14 2.37L4.59 0H2.07z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+@media screen and (max-width: 500px) {
+    .progress {
+        width: calc(100vw * 0.7);
+        /* height: calc(100vw * 0.7 * 0.145); */
+        height: 40px;
+        margin: 25px;
+    }
+
+    .github {
+        margin: 20px;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: inherit;
+    }
+}
+
+
+.display-7{
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+
+.single {
+  margin: 0.5rem;
+  padding-right: 0%;
+  margin-right: 0% !important;
+  input[type="radio"] {
+    -webkit-appearance: none;
+        appearance: none;
+    accent-color: pink;
+    background: #000000;
+    border-radius: 4px !important;
+    border: 2px solid darken(#000000, 25%);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -0.2em;
+    margin-right: 1em; 
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    transition: all 250ms ease;
+  }
+  // input[type="checkbox"]:checked::before {
+  //   transform: scale(1);
+  // }
+  input[type="radio"]:checked::before {
+    content: "\2713"; /* Unicode checkmark icon */
+    color: #000; /* Color of the checkmark */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2em;
+  }
+  
+
+   
+}
+
+
+.multi {
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: var(--form-background);
+        margin-right :20px;
+        color: black;
+        width: 20px;
+        height: 20px;
+        border: 0.15em solid black;
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+        display: grid;
+        place-content: center;
+      }
+      
+      input[type="checkbox"]::before {
+        content: "\2713";
+        width: 0.65em;
+        height: 0.65em;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        transform: scale(0);
+        transform-origin: bottom left;
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        background-color: black;
+      }
+      
+      input[type="checkbox"]:checked::before {
+        transform: scale(1);
+      }
+
+}
+
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+    padding: 0%s;
+  }
+  
+  .progress-container::before {
+    content: ""; /* Mandatory with ::before */
+    background-color: #FFB7A6;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .progress {
+    // background-color: FFB7A6;
+    position: absolute;
+    // top: 50%;
+    // margin-right: 20px;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+    transition: 0.4s ease;
+  }
+
+  .circle {
+    background-color: #FFB7A6;
+    color: #f3f2de;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #f3f2de;
+    transition: 0.4s ease;
+    
+  }
+  
+  .circle.active {
+    border-color: #FFB7A6;
+    color: #FFB7A6;
+    background-color: #328274;
+  }
+
+

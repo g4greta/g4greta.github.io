@@ -50,14 +50,14 @@ export class AddNewsPage implements OnInit {
       'text': new FormControl('', [ Validators.required]),
       'subtitle': new FormControl('', [Validators.pattern('^[A-Za-z0-9èé,\. ]+$'), Validators.required]),
       'title': new FormControl('', [Validators.pattern('^[A-Za-z0-9èé,\. ]+$'), Validators.required]),
-      'img': new FormControl('../../../../assets/imgs/bg-home.jpg')
+      'img': new FormControl('assets/imgs/bg-home.jpg')
+      // 'img': new FormControl('../../../../assets/imgs/bg-home.jpg')
     })
     
 
     if(!(_.isEmpty(this.id) || _.isNull(this.id) || _.isEqual('new', this.id))){
       try {
         this.as.getArticle(this.id,this.as.checkType(this.type)).subscribe(res => {
-          console.log(res)
           this.editorFrom.patchValue(res);
         });
       } catch(error) {

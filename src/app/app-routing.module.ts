@@ -53,9 +53,17 @@ const routes: Routes = [
     loadChildren: () => import('./pages/backoffice/help/help.module').then( m => m.HelpPageModule)
   },
   {
+    path: 'gallery',
+    loadChildren: () => import('./pages/frontend/gallery/gallery.module').then( m => m.GalleryPageModule)
+  },
+  {
+    path: 'quiz',
+    loadChildren: () => import('./pages/frontend/quiz/quiz.module').then( m => m.QuizPageModule)
+  },
+  {
     path: '**',  
     redirectTo: 'home',
-  },
+  }
 ];
 
 @NgModule({

@@ -94,7 +94,7 @@ export class MaterialService {
       //     this.isImgUploading = false;
       //     this.isImgUploaded = true;
       //   },error => {
-      //     console.log(error);
+      //    
       //   })
        
       // }),
@@ -105,7 +105,6 @@ export class MaterialService {
       last(),
       mergeMap(() => {
           const url = imageRef.getDownloadURL();
-          console.log('download url is ',url);
           return url;
       })
     )

@@ -23,7 +23,6 @@ export class NewsPage implements OnInit {
       this.type = this.route.snapshot.paramMap.get('type');
       this.articles = this.as.getArticles(this.as.checkType(this.type));
       this.articles.subscribe((res) => {
-        console.log(res)
       })
   }
 

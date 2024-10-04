@@ -7,3 +7,21 @@
 .social {
     max-width: 80px;
 }
+
+
+/* Apply basic styles to the iframe container */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* This creates a 16:9 aspect ratio (9 / 16 * 100) */
+  }
+  
+  /* Style the iframe to fill the container */
+.iframe-container iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+  

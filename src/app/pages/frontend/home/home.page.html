@@ -5,8 +5,9 @@
 <ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="onScroll($event)">
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button class="contacts"  [routerLink]="['/news-page/kaMY7Hi342XDUjVRCg56', {type: 'pages'}]">
-      <ion-icon name="help-circle-outline"></ion-icon>
+    <!-- <ion-fab-button class="contacts"  [routerLink]="['/news-page/kaMY7Hi342XDUjVRCg56', {type: 'pages'}]"> -->
+    <ion-fab-button class="contacts"  (click)="scrollToTop()">
+      <ion-icon name="arrow-up-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
   
@@ -18,17 +19,23 @@
   <div class="container-fluid h-100 bg" id="intro">
     <div class="row align-items-center h-100" >
       <div class="mx-auto text-center" >
-        <img class="logo" src="../../assets/logo.svg">
+        <img class="logo" src="assets/logo.svg">
         <div class="title mb-4">
           <h1 class="text-white">
             <span class="greta-green">G</span>irls for <span class="greta-green">Gre</span>en
           </h1>
-          <h1 class="text-white"><span class="greta-green">T</span>echnology <span class="home_text">A</span>pplications</h1>
+          <h1 class="text-white"><span class="greta-green">T</span>echnology <span class="greta-green">A</span>pplications</h1>
         </div>
         <div class="row">
-          <span class="text-white">
+          <span class="text-white font-weight-bold">
             <ion-icon name="calendar-outline" class="greta-green"></ion-icon>
-              Nov. 2022 - Gen. 2023
+            Terza edizione: Novembre 2024 - Maggio 2025
+          </span>
+          <span class="text-white font-weight-bold">
+            Seconda edizione: Novembre 2023 - Maggio 2024
+          </span>
+          <span class="text-white">
+            Prima Edizione: Novembre 2022 - Maggio 2023
           </span>
           <span class="text-white">
             <ion-icon name="location-outline" class="greta-green"></ion-icon>
@@ -41,7 +48,7 @@
   </div>
 
   <!--Sezione informativa-->
-  <section id="roadmap" name="roadmap">
+  <section>
     <div>
       <div class="row">
         <div class="col-md-6">
@@ -53,13 +60,27 @@
               mostrando come queste tecnologie, insieme ad altre, siano di grande supporto alla sostenibilità
               ambientale, e - se saremo capaci di sfruttarle - ci aiuteranno a salvare il Pianeta. <br><br>
               In particolare, nel corso del progetto, le partecipanti impareranno a progettare App per cellulari e
-              potranno, con l’aiuto di tutor e docenti universitari, creare dei loro progetti di <span class="greta-green">App su tematiche green</span></p>
+              potranno, con l’aiuto di tutor e docenti universitari, creare dei loro progetti di <span class="greta-green">App su tematiche green</span></p><br>
+              Scopri di piu sul progetto G4GRETA  dall' esperienza del team Athena's Loom <a href="https://drive.google.com/file/d/1mvfqwUuH5xb5peP8yNHhWmn5VlF4G7Ys/preview">(video)</a>.
             <a type="button" class="btn btn-primary rounded-pill float-end more-button p-2 mt-3" [routerLink]="['/news-page/mJSf8L9YgkBj09e9oYFj', {type: 'pages'}]" >Leggi di più</a>
           </div>
         </div>
         <div class="col-md-6">
-          <img src="../../assets/imgs/info.svg" class="info" alt="">
+          <img src="assets/imgs/info.svg" class="info" alt="">
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Sezione programma-->
+  <section id="roadmap" name="roadmap" class="bg-light" style="background-color: black !important;">
+    <div class="text-center pt-4">
+      <div class="py-4">
+        <h1 class="text-light">Scopri G4GRETA con le vincitrici</h1>
+        <h1 class="text-light">del team Athena's Loom</h1>
+      </div>
+      <div class="iframe-container">
+        <iframe src="https://drive.google.com/file/d/1mvfqwUuH5xb5peP8yNHhWmn5VlF4G7Ys/preview" width="320" height="100"></iframe>
       </div>
     </div>
   </section>
@@ -67,7 +88,7 @@
 
   <!--Sezione programma-->
   <section id="roadmap" name="roadmap" class="bg-light">
-    <div class="text-center mt-5">
+    <div class="text-center">
       <div class="pt-4">
         <h1 class="text-dark">Programma</h1>
       </div>
@@ -79,7 +100,7 @@
   <section id="materials" name="materials">
     <div class="text-center mt-5 mb-5">
       <div class="mx-5">
-        <h1 class="text-dark">Materiale Didattico</h1>
+        <!-- <h1 class="text-dark">Materiale Didattico</h1> -->
         <app-materials></app-materials>
       </div>
     </div>
@@ -91,7 +112,9 @@
     <div class="row align-items-center projects">
       <div class="mx-auto text-center" >
         <h1 class="text-white">Carica il tuo progetto</h1>
-        <a type="button" class="btn btn-success upload-btn mt-4"  (click)="this.is.isFormAvaiable()">Upload!</a>
+        <!-- <a type="button" class="btn btn-success upload-btn mt-4"  (click)="this.is.isFormAvaiable()">Accedi!</a> -->
+        <!-- <a type="button" class="btn btn-success upload-btn mt-4"  href="https://docs.google.com/forms/d/e/1FAIpQLScWZjetkZ11x1H9bz7o-L0eJFahsug1MEn89nAhYN4F6GbAfA/viewform">Accedi!</a> -->
+        <a type="button" class="btn btn-success upload-btn mt-4"  (click)="this.is.isFormAvaiable()">Accedi!</a>
       </div>
     </div>
   </section>
@@ -101,28 +124,58 @@
   <section id="news" name="news" class="bg-light py-3">
     <div class="text-center">
       <div class="py-3">
-        <h1 class="text-black mb-3">Blog</h1>
+        <h1 class="text-black mb-3">News</h1>
       </div>
       <app-news></app-news>
     </div>
   </section>
 
   <!-- Sezione sponsor-->
-  <div class="text-center mt-5">
-    <h1 class="text-dark pt-3 ">Sponsor</h1>
-    <div class="row align-item-center sponsor mt-0">
-      <div class="mx-auto text-center">
-        <img class="logo-sponsor" src="../../assets/sponsor/sapienza.png" alt="">
+  <section id="partners" name="partners">
+    <div class="text-center mt-5">
+      <!-- <h1 class="text-dark pt-3 ">Partner</h1> -->
+      <div class="row align-item-center sponsor mt-0 mx-5">
+        <div class="mx-auto text-center">
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3 mt-5">
+              <h2 class="text-dark pt-3 px-5">Main Partner</h2>
+              <div class="text-center"> <!-- Add "text-center" class here -->
+                <img class="logo-sponsor" src="assets/sponsor/EY Foundation.jpg" alt="">
+              </div>
+            </div>
+            
+            <div class="col-md-3 mt-5">
+              <h2 class="text-dark pt-3">Organizzatore</h2>
+              <div class="text-center"> <!-- Add "text-center" class here -->
+                <img class="logo-sponsor" src="assets/sponsor/sapienza.png" alt="">
+              </div>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <h2 class="text-dark pt-3">Partners</h2>
+      <div class="row align-item-center sponsor mt-0">
+        <div class="mx-auto text-center">
+          <img style="width: 400px;" src="assets/sponsor/lazio.png" alt="">
+          <img class="partner-sponsor m-4" src="assets/sponsor/fmd.png" alt="">
+          <img class="partner-sponsor m-4" src="assets/sponsor/ibm.svg" alt="">
+          <img class="partner-sponsor m-4" style="width: 200px;" src="assets/sponsor/mindsharing.jpg" alt="">
+        </div>
+      </div>
+      
+      <h2 class="text-dark pt-3">Media partner</h2>
+      <div class="row align-item-center sponsor mt-0">
+        <div class="mx-auto text-center">
+          <img class="partner-sponsor m-4" style="width: 300px;" src="assets/sponsor/gen_s.jpg" alt="">
+        </div>
       </div>
     </div>
-    <h2 class="text-dark pt-3">Partner</h2>
-    <div class="row align-item-center sponsor mt-0">
-      <div class="mx-auto text-center">
-        <img class="partner-sponsor m-4" src="../../assets/sponsor/fmd.png" alt="">
-        <img class="partner-sponsor m-4" src="../../assets/sponsor/ibm.svg" alt="">  
-      </div>
-    </div>
-  </div>
+  </section>
+  
 
 
   <section id="news" name="news" class="bg-light py-3 text-center ">
@@ -131,17 +184,22 @@
       </div>
       <div class="row align-item-center mt-1">
         <div class="mx-auto text-center">
-          <img src="../../../../assets/social/facebook.png" alt="" class="social m-2">
-            <img src="../../../../assets/social/instagram.png" alt="" class="social m-2">
-            <img src="../../../../assets/social/tiktok.png" alt="" class="social m-2"> 
+          <a href="https://www.linkedin.com/in/g4greta">
+            <img src="assets/social/linkedin.png" alt="" class="social m-2">
+          </a>
+          <a href="#">
+            <img src="assets/social/whatsapp.png" alt="" class="social m-2">
+          </a>
+          <a href="https://www.tiktok.com/@g4gretasapienza">
+            <img src="assets/social/tiktok.png" alt="" class="social m-2"> 
+          </a>
+          <a href="https://www.instagram.com/g4greta_2023/">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="" class="social m-2"> 
+          </a>
         </div>
       </div>
   </section>
 
-  
-
-
   <app-footer></app-footer>
-  
 
 </ion-content>

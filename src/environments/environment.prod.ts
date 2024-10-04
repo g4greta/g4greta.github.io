@@ -3,39 +3,39 @@ export const environment = {
 };
 export const timelines = [{
   "title": "Presentazione del progetto e formazione dei gruppi di lavoro",
-  "icon": "../../../assets/imgs/rocket.svg",
+  "icon": "assets/imgs/rocket.svg",
   "date": "Novembre",
   "position": "left"
   },
   {
     "title": "Tecnologie e sostenibilità ambientale",
-    "icon": "../../../assets/imgs/smartphone.svg",
+    "icon": "assets/imgs/smartphone.svg",
     "date": "Novembre",
     "position": "right"
   },
   {
     "title": "Introduzione a Design Thinking ",
-    "icon": "../../../assets/imgs/light-bulb.svg",
+    "icon": "assets/imgs/light-bulb.svg",
     "date": "Dicembre",
     "position": "left"
   },{
     "title": "Introduzione al coding con MIT Appinventor",
-    "icon": "../../../assets/imgs/coding.svg",
+    "icon": "assets/imgs/coding.svg",
     "date": "Gennaio - Febbraio",
     "position": "right"
   },{
     "title": "Public speaking e videomaking",
-    "icon": "../../../assets/imgs/presentation.svg",
+    "icon": "assets/imgs/presentation.svg",
     "date": "Marzo",
     "position": "left"
   },{
     "title": "Selezione dei 10 migliori progetti",
-    "icon": "../../../assets/imgs/pitch.svg",
+    "icon": "assets/imgs/pitch.svg",
     "date": "Aprile",
     "position": "right"
   },{
     "title": "Premiazione e party",
-    "icon": "../../../assets/imgs/podium.svg",
+    "icon": "assets/imgs/podium.svg",
     "date": "Maggio",
     "position": "left"
   }]
@@ -73,19 +73,19 @@ export const timelines = [{
       'title': 'titolo 1',
       'subtitle': 'testo di prova da sistemare',
       'id': 'w',
-      'img': '../../../assets/imgs/coding.jpg'
+      'img': 'assets/imgs/coding.jpg'
     },
     {
       'title': 'titolo 1',
       'subtitle': 'testo di prova da sistemare',
       'id': 'w',
-      'img': '../../../assets/imgs/coding.jpg'
+      'img': 'assets/imgs/coding.jpg'
     },
     {
       'title': 'titolo 1',
       'subtitle': 'testo di prova da sistemare',
       'id': 'w',
-      'img': '../../../assets/imgs/coding.jpg'
+      'img': 'assets/imgs/coding.jpg'
     }
   ]
 
@@ -98,4 +98,4 @@ export const timelines = [{
     appId: "1:790488105135:web:0f3fb3c7f553f771d1545a",
     measurementId: "G-VPHHLKY640"
   };
-  
+

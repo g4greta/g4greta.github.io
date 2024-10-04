@@ -1,0 +1,124 @@
+
+<ion-content>
+<div class="content h-100 px-5">
+  <div class="row h-100">
+    <div class="col-md-6 d-flex justify-content-center align-items-center px-0">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="row mx-5" *ngIf="!isFinished">
+       
+           
+            <!-- Progress bar -->
+            <h5 class="px-3 my-2" style="color: rgb(79, 79, 79);">Valutazione G4Greta </h5>
+            <div class="progress-container">
+              <div class="progress" id="progress"></div>
+              <div class="circle" *ngFor="let val of this.survey | slice:0:10; let i = index">{{i+1}}</div>
+            </div>
+            
+
+            <!-- Titolo e istruzioni -->
+            <h5 class="display-5 inline-block my-2" >{{survey[surveyIndex].question}}</h5>
+            <span class="my-2 ">{{survey[surveyIndex].istruction}}</span>
+
+            <!-- Mixed -->
+            <div *ngIf="survey[surveyIndex].element == 'mixed'" >
+              <div class="row px-3">
+                <div class="single d-flex align-items-center">
+                  <input id="yes" name="radio" type="radio" *ngIf="!canShowInput" (change)="showInput('yes')" >
+                  <label for="yes" class="radio-label display-7 ">Si</label>
+                  <input type="text" class="form-control mx-2" *ngIf="canShowInput" placeholder="Perchè ..." [(ngModel)]="inputField2">
+                </div>
+                <div class="single d-flex align-items-center" *ngIf="!canShowInput">
+                  <input id="no" name="radio" type="radio" (change)="showInput('no')">
+                  <label for="no" class="radio-label display-7"  >No</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col d-flex flex-column-reverse">
+                  <button type="button" class="btn btn-outline-dark mt-2 align-self-end" (click)="getMixed()">Avanti</button>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- Stars -->
+            <div *ngIf="survey[surveyIndex].element == 'star'" >
+              <div class="row">
+                  <div *ngFor="let val of survey[surveyIndex].questions; let i = index" class="d-flex align-items-center my-2">
+                    <div class="col">
+                      <div class="display-7">{{ val }}</div>
+                    </div>
+                    <div class="col-auto mx-2">
+                      <app-rating [name]="val" [index]="i"></app-rating>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col d-flex flex-column-reverse">
+                  <button type="button" class="btn btn-outline-dark mt-2 align-self-end" (click)="getRate()">Avanti</button>
+
+                </div>
+              </div>
+
+            </div>
+
+            <!-- List of radio - just one! -->
+            <div *ngIf="survey[surveyIndex].element == 'single'">
+              <div class="row px-3 my-2" *ngFor="let val of survey[surveyIndex].questions">
+                  <div class="col-auto single d-flex align-middle">
+                    <input id="{{val}}-1" name="radio" type="radio" value="{{val}}">
+                  </div>
+                  <div class="col p-0 d-flex align-items-center">
+                    <label for="{{val}}-1" class="radio-label display-7">{{val}}</label>
+                  </div>
+              </div>
+              <div class="col d-flex flex-column-reverse">
+                <button type="button" class="btn btn-outline-dark mt-2 align-self-end" (click)="getSingle()">Avanti</button>
+              </div>
+            </div>
+
+            <!-- List of checkbox - multi! -->
+            <div *ngIf="survey[surveyIndex].element == 'multi'">
+              <div class="row px-3 my-2" *ngFor="let val of survey[surveyIndex].questions">
+                  <div class="col-auto multi d-flex align-items-center">
+                    <input id="multi-{{val}}" name="checkbox" type="checkbox" value="{{val}}">
+                  </div>
+                  <div class="col p-0">
+                    <label for="multi-{{val}}" class=" display-7">{{val}}</label>
+                  </div>
+              </div>
+              <div class="col d-flex flex-column-reverse">
+                <button type="button" class="btn btn-outline-dark mt-2 align-self-end" (click)="getMulti()">Avanti</button>
+              </div>
+            </div>
+    
+
+            <!-- Text area -->
+            <div *ngIf="survey[surveyIndex].element == 'input'" class="my-2">
+              <div class="col ">
+                <div class="input-group d-flex align-items-center">
+                  <input type="text" class="form-control" placeholder="Inserisci la risposta qui" #inputField [(ngModel)]="textAnswer">
+                  <button type="button" class="btn btn-outline-dark avanti" (click)="getText(inputField.value)">Avanti</button>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+
+        <!-- Messaggio finale -->
+        <div class="row mx-5" *ngIf="isFinished">
+          <h5>Valutazione G4Greta</h5>
+          <h3 class="display-3">Grazie hai completato il form!</h3>
+          <button type="button" class="btn btn-outline-dark" routerLink="/home">Home</button>
+
+        </div>
+      </div>
+      
+
+    </div>
+    <div class="col-md-6 px-5 d-flex align-items-center">
+      <img src="{{survey[surveyIndex].img}}" alt="" class="src">
+    </div>
+  </div>
+</div>
+</ion-content>

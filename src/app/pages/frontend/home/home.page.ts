@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Article } from 'src/app/models/article.model';
 import { AlertService } from 'src/app/services/alert.service';
 import { ArticleService } from 'src/app/services/article.service';
 import { InfoService } from 'src/app/services/info.service';
 import { MetatagsService } from 'src/app/services/metatags.service';
+import { IonContent } from '@ionic/angular';
 
 declare var $: any;
 
@@ -16,12 +17,17 @@ declare var $: any;
 export class HomePage implements OnInit {
 
   articles:Observable<Article[]>;
+  @ViewChild(IonContent) content: IonContent;
 
   constructor(
     private as: ArticleService,
     public is: InfoService,
     private meta: MetatagsService
     ) { 
+  }
+
+  scrollToTop() {
+    this.content.scrollToTop(600);
   }
 
   ngOnInit() {
@@ -47,7 +53,6 @@ export class HomePage implements OnInit {
     else 
       $(".navbar").removeClass('navbar-inverse');
   };
-
 
 
  
